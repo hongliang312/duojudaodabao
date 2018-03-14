@@ -1,9 +1,12 @@
 package hongliang.com.channelmanagement;
-
 import android.content.Intent;
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -17,6 +20,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TabLayout mMytab;
@@ -24,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayList<ChannelBean> channelBeens;
     String jsonStr = "";
     private Gson gson;
+    private ViewPager vp;
 
 
     @Override
@@ -32,7 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initView();
         initData();
-
+        vpsp vpsp = new vpsp(getSupportFragmentManager());
+        vp.setAdapter(vpsp);
+        mMytab.setupWithViewPager(vp);
     }
     private void initData(){
         //准备栏目数据
@@ -66,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mMytab = (TabLayout) findViewById(R.id.mytab);
         mImgBtn = (ImageButton) findViewById(R.id.imgBtn);
         mImgBtn.setOnClickListener(this);
+        vp = (ViewPager) findViewById(R.id.vp);
+
     }
 
     @Override
@@ -99,6 +108,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mMytab.addTab(mMytab.newTab().setText(channelBeens.get(i).getName()));
                 }
             }
+        }
+    }
+    class vpsp extends FragmentPagerAdapter {
+        //有参数的构造
+        public vpsp(FragmentManager fm) {
+            super(fm);
+        }
+        //返回选项卡的文本 ，，，添加选项卡
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return channelBeens.get(position).getName();
+        }
+        //创建fragment对象并返回
+        @Override
+        public Fragment getItem(int position) {
+            content content = new content();
+            Bundle bundle = new Bundle();
+            bundle.putString("name",channelBeens.get(position).getName());
+            content.setArguments(bundle);
+            return content;
+        }
+        //返回数量
+        @Override
+        public int getCount() {
+            return channelBeens.size();
         }
     }
 }
