@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/channelmanagement/channelmanagement.iml" filepath="$PROJECT_DIR$/channelmanagement/channelmanagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fanweixinpwd/fanweixinpwd.iml" filepath="$PROJECT_DIR$/fanweixinpwd/fanweixinpwd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/handler/handler.iml" filepath="$PROJECT_DIR$/handler/handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mydianjiutu/mydianjiutu.iml" filepath="$PROJECT_DIR$/mydianjiutu/mydianjiutu.iml" />
       <module fileurl="file://$PROJECT_DIR$/myduoduo.iml" filepath="$PROJECT_DIR$/myduoduo.iml" />
     </modules>
   </component>

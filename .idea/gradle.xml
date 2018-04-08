@@ -9,6 +9,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/channelmanagement" />
+            <option value="$PROJECT_DIR$/fanweixinpwd" />
+            <option value="$PROJECT_DIR$/handler" />
+            <option value="$PROJECT_DIR$/mydianjiutu" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

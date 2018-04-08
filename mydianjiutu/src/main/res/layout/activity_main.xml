@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="hongliang.com.mydianjiutu.MainActivity">
+
+    <!--当控件的宽度或高度是match_parent  weight值的设置 与控件实际的宽度或高度是成反比
+       当控件的宽度或高度是wrap_content  weight值的设置 与控件实际的宽度或高度是成反比
+       把控件的宽度与高度设置成0dp,防止因为内容过多，导致效果显示 与weight值设置不相符的情况
+
+    -->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:layout_weight="2"
+        android:background="@drawable/save"
+
+        />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hello World!22222222222222222222222222222222222222222222222222"
+        android:layout_weight="1"
+        android:background="@drawable/save"
+
+        />
+
+</LinearLayout>
